@@ -18,6 +18,34 @@ Think of a **House Blueprint** (Class) and the **Actual House** (Object).
 - **Methods (Functions):** Functions within a class that perform actions (behavior).
 - **Instantiation:** The process of creating an object from a class.
 
+## Class Design
+
+- **Class responsibilities (Single Responsibility):**
+
+- **Proper naming:**
+
+- **Visibility (private/protected/public):**
+
+- **Immutable vs Mutable objects:**
+
+- **DTO vs Entity vs Value Object:**
+
+- **Object Relationships:**
+
+Association
+
+Aggregation
+
+Composition
+
+Dependency
+
+Cardinality (1-1, 1-many, many-many)
+
+📌 Interviewers often ask:
+
+“Why did you choose composition over inheritance?”
+
 ## Syntax Overview
 ```text
 class ClassName {

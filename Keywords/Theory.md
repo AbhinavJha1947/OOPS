@@ -34,3 +34,10 @@ This section covers essential keywords used in Object-Oriented Programming (Java
 
 ## 5. `abstract`
 *   Used to declare abstract classes and methods (discussed in Abstraction).
+
+Delegates / Events (in C# specifically)
+Inner / Nested Classes
+Partial Classes
+Sealed / Final Classes
+Virtual & Override Keywords
+Anonymous Classes / Objects
