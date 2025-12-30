@@ -20,31 +20,76 @@ Think of a **House Blueprint** (Class) and the **Actual House** (Object).
 
 ## Class Design
 
-- **Class responsibilities (Single Responsibility):**
+### 1. Class Responsibilities (Single Responsibility Principle - SRP)
+A class should have **one, and only one, reason to change**. This means a class should focus on a single task or responsibility.
+-   **Cohesion**: A class should have **High Cohesion** (all methods/fields relate to a central purpose).
+-   **Coupling**: Classes should have **Low Coupling** (dependencies between classes should be minimized).
+*   *Bad Example*: `User` class handles database logic, email sending, and validation.
+*   *Good Example*: `User` handles data, `UserRepository` handles database, `EmailService` handles emails.
 
-- **Proper naming:**
+### 2. Proper Naming
+Clear naming is critical for maintainability.
+-   **Classes**: Nouns, PascalCase (e.g., `Customer`, `BankAccount`). Avoid vague names like `Manager` or `Processor` if possible.
+-   **Methods**: Verbs/Actions, camelCase (e.g., `calculateTotal()`, `isValid()`).
+-   **Booleans**: Prefix with `is`, `has`, `can` (e.g., `isActive`, `hasAccess`).
 
-- **Visibility (private/protected/public):**
+### 3. Visibility (Access Modifiers)
+Control who can access your class members to ensure **Encapsulation**.
+-   **private**: Only visible within the class. (Default choice for fields).
+-   **protected**: Visible to package and subclasses.
+-   **public**: Visible everywhere. (Use sparingly, mainly for API methods).
+-   **package-private (default)**: Visible only within the same package.
 
-- **Immutable vs Mutable objects:**
+### 4. Immutable vs Mutable Objects
+-   **Mutable**: State can change after creation.
+    -   *Example*: `StringBuilder`, typical JavaBean with setters.
+-   **Immutable**: State **cannot** change after creation.
+    -   *How*: Make class `final`, all fields `private final`, no setters.
+    -   *Benefits*: Thread-safe by default, excellent for HashKeys, no side effects.
+    -   *Example*: `String`, `Integer`, `BigDecimal`.
 
-- **DTO vs Entity vs Value Object:**
+### 5. DTO vs Entity vs Value Object
+-   **Entity**: An object defined by its **Identity** (ID). two entities with different IDs are different, even if data is same.
+    -   *Example*: `User` (ID: 101), `Order` (ID: 5002). Mutable.
+-   **Value Object (VO)**: An object defined by its **Value**. No identity. Two VOs with same values are considered equal.
+    -   *Example*: `Money($10)`, `GPSLocation(x,y)`, `Color(Red)`. Should be Immutable.
+-   **DTO (Data Transfer Object)**: A simple object used to transfer data between processes/layers.
+    -   *Characteristics*: No business logic, just getters/setters (or public fields), often serializable.
 
-- **Object Relationships:**
+### 6. Object Relationships
+How objects interact with each other. [See detailed examples here](../Object%20Relationships/Dependency.md).
 
-Association
+-   **Association ("Uses-a")**:
+    -   Objects have independent lifecycles.
+    -   *Example*: `Teacher` and `Student`. A teacher has students, but removing a teacher doesn't destroy the students.
 
-Aggregation
+-   **Aggregation ("Has-a")**:
+    -   A specialized form of Association. Parent has Child, but Child can exist independently.
+    -   *Example*: `Department` and `Employee`. If Department closes, Employees still exist.
 
-Composition
+-   **Composition ("Part-of")**:
+    -   Strong ownership. Child **cannot** exist without Parent.
+    -   *Example*: `House` and `Room`. If House is destroyed, Rooms are gone.
 
-Dependency
+-   **Dependency**:
+    -   A temporary relationship where one class uses another (e.g., as a parameter).
+    -   *Example*: `Driver` depends on `Car` only while driving.
 
-Cardinality (1-1, 1-many, many-many)
+#### Cardinality
+Describes the numerical relationship between entities:
+-   **1-to-1**: One User has One Profile.
+-   **1-to-Many**: One Team has Many Players.
+-   **Many-to-Many**: Students and Courses (One student takes many courses; One course has many students).
 
-📌 Interviewers often ask:
+---
 
-“Why did you choose composition over inheritance?”
+### 📌 Interview Question: "Why did you choose Composition over Inheritance?"
+**Answer**:
+"I prefer **Composition over Inheritance** because it provides more flexibility and avoids the 'Fragile Base Class' problem."
+1.  **Flexibility**: You can change behavior at runtime (Dependency Injection), whereas inheritance is fixed at compile-time.
+2.  **Loose Coupling**: Changes in the parent class don't automatically break the child class.
+3.  **Encapsulation**: Inheritance breaks encapsulation because the subclass depends on the internal details of the parent.
+4.  **"Is-a" vs "Has-a"**: Inheritance is only for strict "Is-a" relationships. If unsure, "Has-a" (Composition) is safer.
 
 ## Syntax Overview
 ```text

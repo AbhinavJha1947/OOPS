@@ -28,6 +28,33 @@ Welcome to the OOPS Concepts repository. This contains theory, code examples (Ja
 *   **Code**: [Java](Keywords/Keywords.java) | [C#](Keywords/Keywords.cs) | [C++](Keywords/Keywords.cpp)
 *   **Concepts**: `static`, `this`, `super`, `final`, `sealed`, `const`.
 
+### 7. [Constructor & Destructor](Constructor%20Destructor/Theory.md)
+*   **Code**: [Java](Constructor%20Destructor/ConstructorDestructor.java) | [C#](Constructor%20Destructor/ConstructorDestructor.cs) | [C++](Constructor%20Destructor/ConstructorDestructor.cpp)
+*   **Concepts**: Constructors, Destructors, Finalizers, Copy Constructor.
+
+### 8. [Access Modifiers](AccessModifiers/Theory.md)
+*   **Code**: [Java](AccessModifiers/AccessModifiers.java) | [C#](AccessModifiers/AccessModifiers.cs) | [C++](AccessModifiers/AccessModifiers.cpp)
+*   **Concepts**: Public, Private, Protected, Internal.
+
+### 9. [Object Relationships](Object%20Relationships/Dependency.md)
+*   **Code**: [Java](Object%20Relationships/RelationshipsDemo.java) | [C#](Object%20Relationships/RelationshipsDemo.cs) | [C++](Object%20Relationships/RelationshipsDemo.cpp)
+*   **Concepts**: Association, Aggregation, Composition, Dependency.
+
+### 10. [Concurrency](Concurrency%20&%20Thread%20Safety/Thread%20safety.md)
+*   **Code**: [Java](Concurrency%20&%20Thread%20Safety/ThreadSafetyDemo.java) | [C#](Concurrency%20&%20Thread%20Safety/ThreadSafetyDemo.cs) | [C++](Concurrency%20&%20Thread%20Safety/ThreadSafetyDemo.cpp)
+*   **Concepts**: Threads, Synchronization, Locks, Race Conditions.
+
+### 11. [Advanced Concepts](Advanced%20Concepts/)
+*   **Topics**:
+    *   [Shallow vs Deep Copy](Advanced%20Concepts/Shallow%20vs%20Deep%20Copy.md)
+    *   [Coupling vs Cohesion](Advanced%20Concepts/Coupling%20vs%20Cohesion.md)
+    *   [Pass by Value vs Reference](Advanced%20Concepts/Pass%20by%20Value%20vs%20Reference.md)
+    *   [Diamond Problem](Advanced%20Concepts/Diamond%20Problem.md)
+    *   [Law of Demeter](Advanced%20Concepts/Law%20of%20Demeter.md)
+    *   [Composition vs Inheritance](Advanced%20Concepts/Composition%20vs%20Inheritance.md)
+    *   [Dependency Injection (DI)](Advanced%20Concepts/Dependency%20Injection%20(DI).md)
+    *   [Interfaces vs Abstract Classes](Advanced%20Concepts/Interfaces%20vs%20Abstract%20Classes.md)
+
 ---
 
 ## 🎯 [Interview Questions](Interview-Questions.md)
